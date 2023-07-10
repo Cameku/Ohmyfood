@@ -4,7 +4,9 @@ import ohmyfood from '../images/logo/ohmyfood@2x.svg'
 const Header = () => {
   return (
     <div>
-     <h1>Welcome to Ohmyfood!</h1>
+    <img src={ohmyfood} className='logo' alt='Ohmyfood logo' />
+    <br />
+    <button className='btn'> Click here</button>
     </div>
   )
 }
