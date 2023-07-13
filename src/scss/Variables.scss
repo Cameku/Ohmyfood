@@ -8,18 +8,15 @@ $shadow-light: 0 2rem 5rem rgba(0,0,0,.06);
 
 .btn {
   background: #FF79DA ;
-  background-image: -webkit-linear-gradient(top, #FF79DA , #9356DC);
-  background-image: -moz-linear-gradient(top, #FF79DA , #9356DC);
-  background-image: -ms-linear-gradient(top, #FF79DA , #9356DC);
-  background-image: -o-linear-gradient(top, #FF79DA , #9356DC);
   background-image: linear-gradient(to bottom, #FF79DA , #9356DC);
-  -webkit-border-radius: 28;
-  -moz-border-radius: 28;
-  border-radius: 28px;
-  font-family: Arial;
+  border-radius: 28;
+  font-family: Roboto;
   color: #ffffff;
-  font-size: 20px;
-  padding: 10px 20px 10px 20px;
+  font-size: 16px;
+  border-radius: 20px;
+  border-style: none;
+  border-width: 2;
+  padding: 15px 25px;
   text-decoration: none;
 }
 
