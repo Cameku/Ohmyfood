@@ -1,7 +1,7 @@
 import React from 'react'
 import Navigation from '../navigation/Navigation'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Home from '../pages/Home'
+import '../scss/Main.scss'
 
 const Layout = () => {
   return (
