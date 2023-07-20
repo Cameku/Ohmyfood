@@ -1,9 +1,11 @@
 import React from 'react'
+import { FaRegHeart
+} from "react-icons/fa";
 
 const Bastille = () => {
   return (
-    <div>
-      <h2>Hello Bastille</h2>
+    <div className='Bastille'>
+   
     </div>
   )
 }
