@@ -5,7 +5,11 @@ import { FaRegHeart
 const Bastille = () => {
   return (
     <div className='Bastille'>
-   
+      <h2> Welcome to the Menu page</h2>
+      <section className='menuHeader'>
+      <img src="{}" alt= "Restaurant Name"/>
+      
+      </section>
     </div>
   )
 }

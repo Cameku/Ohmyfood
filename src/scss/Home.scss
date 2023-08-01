@@ -1,12 +1,15 @@
 
 /* mobile styles */
 .home {
-  //margin: 20px;
   text-align: center;
 
   .paris {
     background-color: #ccc;
     padding: 20px 0px;
+
+    .parisIcon {
+      padding-right: 20px;
+    }
   }
 
   .bookMenu {
@@ -47,20 +50,23 @@
     }
   }
 
-    .restaurants {
-      background-color: #eee;
-     // margin: 20px 0px;
-     padding: 50px 15px 20px 15px;
-}
+  .restHeader {
+    text-align: left;
+    background-color: #eee;
+    padding-top: 50px;
+    padding-left: 20px;
+  }
 
-      .restText {
-        text-align: left;
-        padding-bottom: 20px;
-      }
+    .restaurants {
+     background-color: #eee;
+     text-align: left;
+     padding: 20px 20px 20px 20px;
+     
+}
 
       .restaurantCard {
         background-color: #f6f4f4;
-        margin-bottom: 50px;
+       // margin-bottom: 50px;
         padding-bottom: 20px;
         border-radius: 10px;
         box-shadow: 0px 5px 5px 0px #ccc;
@@ -95,9 +101,28 @@
 
 
 
-
 /* tablet styles */
 @media screen and (max-width: 768px) {
+  .home {
+    font-size: 18px;
+
+    .paris {
+      font-size: 22px;
+      .parisIcon {
+        padding-right: 50px;
+      }
+    }
+
+    .restaurantCard {
+      img {
+        width: 100%;
+       max-width: 780px;
+      // height: 340px;
+       
+      }
+    }
+
+  }
 
 }
 
@@ -105,19 +130,37 @@
 
 
 /* large tablets & laptop styles */
-@media screen and (min-width: 960px) {
+@media screen and (max-width: 960px) {
+
+  .home {
+  //  margin:  20px 50px;
+    //font-size: 22px;
+
+    .paris {
+     // font-size: 22px;
+      .parisIcon {
+        padding-right: 50px;
+      }
+    }
+
+    /* .restaurants { 
+     display: flex;
+     
+    } */
+  }
+
 
 }
 
 /* desktop style */
-@media screen and (min-width: 1200px) {
+@media screen and (max-width: 1200px) {
  body {
   font-size: 20px;
   } 
 }
 
 /* Large desktop style */
-@media screen and (min-width: 1440px) {
+@media screen and (max-width: 1440px) {
     body {
      font-size: 24px;
      } 

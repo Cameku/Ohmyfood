@@ -1,27 +1,44 @@
-import {
-  FaMapMarkerAlt,
-  FaMobileAlt,
-  FaList,
-  FaStore,
-  FaRegHeart,
-} from "react-icons/fa";
-
+import { FaMapMarkerAlt, FaMobileAlt, FaList, FaStore } from "react-icons/fa";
 import { Bs1CircleFill, Bs2CircleFill, Bs3CircleFill } from "react-icons/bs";
+import { ApiHelper } from "../apiHelper/ApiHelper";
+import { useEffect, useState } from "react";
+import RestaurantCard from "../components/RestaurantCard";
+import { RestaurantType } from '../type';
+import NotFound from "./NotFound";
+import WithLoader from "../components/WithLoader";
+
 
 const Home = () => {
+
+const [restaurantDetails, setrestaurantDetails] = useState<RestaurantType[]>([]);
+
+const apiHelper = new ApiHelper;
+
+const getData = async () => {
+const restData = await apiHelper.getApiData();
+
+console.log(restData);
+setrestaurantDetails(restData);
+}
+
+
+useEffect(() => {
+  getData();
+}, []) 
+
   return (
     <main className="home">
       <div className="paris">
         <h3>
-          <FaMapMarkerAlt /> Paris, Belleville
+          <FaMapMarkerAlt className="parisIcon"/> Paris, Belleville
         </h3>
       </div>
       <section className="bookMenu">
         <h2 className="book">Book the menu you like</h2>
         <div className="para">
           <p>
-            Discover top-of-the-art restaurants we
-            <br /> picked for you
+            Discover top-of-the-art restaurants we<br />
+            picked for you
           </p>
         </div>
         <div className="homeBtn">
@@ -52,59 +69,21 @@ const Home = () => {
         </div>
       </section>
       <section className="restaurants">
-        <div className="restText">
+      <div className="restHeader">
           <h2>Restaurants</h2>
         </div>
-        <figure className="restaurantCard">
-              <img
-                src={require("../images/restaurants/jay-wennington.jpg")}
-                alt="Jay Wennington Restaurant"/>
-            <figcaption className="lead">
-              <h3>The Full Palette</h3> < FaRegHeart size={25} />
-            </figcaption>
-            <figcaption className="location">
-              <p>New York</p>
-            </figcaption>
-        </figure>
-        <figure className="restaurantCard">
-              <img
-                src={require("../images/restaurants/stil-unsplash.jpg")}
-                alt="The Enchanted Plate Restaurant"  />
-
-          <figcaption className="lead">
-              <h3>The Enchanted Plate</h3>  <FaRegHeart size={25} />
-            </figcaption>
-            <figcaption className="location">
-              <p>New York</p>
-            </figcaption>
-          
-        </figure>
-        <figure className="restaurantCard">
-              <img
-                src={require("../images/restaurants/toa-unsplash.jpg")}
-                alt="The Bastille Restaurant" />
-            <figcaption className="lead">
-              <h3>Bastille</h3>  < FaRegHeart size={25} />
-            </figcaption>
-            <figcaption className="location">
-              <p>New York</p>
-            </figcaption>
-          
-        </figure>
-        <figure className="restaurantCard">
-              <img
-                src={require("../images/restaurants/louis-hansel.jpg")}
-                alt="The Le Gourmand Restaurant"  />
-            
-            <figcaption className="lead">
-              <h3>Le Gourmand</h3>  < FaRegHeart size={25} />
-            </figcaption>
-            <figcaption className="location">
-              <p>New York</p>
-            </figcaption>
-       
-        </figure>
-      </section>
+      {
+        restaurantDetails?.length > 0 ? (
+          restaurantDetails.map((restaurant, index) => (
+            <div key={index}>
+                <RestaurantCard id={restaurant.id} restImage={restaurant.restImage} name={restaurant.name} location={restaurant.location} menus={restaurant.menus}/>
+            </div>
+          ))
+        ) : (
+          <div> <NotFound /> </div>
+        )
+      }
+    </section>
     </main>
   );
 };
