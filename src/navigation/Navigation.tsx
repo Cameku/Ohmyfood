@@ -4,9 +4,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "../pages/Home";
 import Footer from "../components/Footer";
 import Bastille from "../pages/Bastille";
-import Enchanted from "../pages/Enchanted";
 import Palette from "../pages/Palette";
-import Gourmand from "../pages/Gourmand";
+import NotFound from "../pages/NotFound";
 
 const Navigation = () => {
   return (
@@ -17,9 +16,8 @@ const Navigation = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Bastille" element={<Bastille />} />
-          <Route path="/Enchanted" element={<Enchanted />} />
           <Route path="/Palette" element={<Palette />} />
-          <Route path="/Gourmand" element={<Gourmand />} />
+          <Route path="/Gourmand" element={<NotFound />} />
         </Routes>
 
         <Footer />
