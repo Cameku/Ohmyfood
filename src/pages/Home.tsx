@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import RestaurantCard from "../components/RestaurantCard";
 import { RestaurantType } from '../type';
 import NotFound from "./NotFound";
-import WithLoader from "../components/WithLoader";
+//import WithLoader from "../components/WithLoader";
 
 
 const Home = () => {
@@ -17,7 +17,7 @@ const apiHelper = new ApiHelper;
 const getData = async () => {
 const restData = await apiHelper.getApiData();
 
-console.log(restData);
+//console.log(restData);
 setrestaurantDetails(restData);
 }
 
@@ -36,10 +36,10 @@ useEffect(() => {
       <section className="bookMenu">
         <h2 className="book">Book the menu you like</h2>
         <div className="para">
-          <p>
+        
             Discover top-of-the-art restaurants we<br />
             picked for you
-          </p>
+          
         </div>
         <div className="homeBtn">
           <button className="btn botton"> Explore our restaurants </button>
@@ -51,20 +51,20 @@ useEffect(() => {
         </div>
         <div className="chose">
           <div className="working">
-           <div> < Bs1CircleFill /></div>
-           <div><FaMobileAlt /> Chose a restaurant</div>
+           <div className="circlefill"> <Bs1CircleFill size={25} color={"#9356DC"}/></div>
+           <div  className="styleFab"><FaMobileAlt className="styleFa" size={22}/><b>Chose a restaurant </b></div>
           </div>
         </div>
         <div className="chose">
           <div className="working">
-          <div> < Bs2CircleFill /></div>
-            <p> <FaList /> Create your menu</p>
+          <div className="circlefill"> <Bs2CircleFill size={25} color={"#9356DC"}/></div>
+            <div  className="styleFab"> <FaList className="styleFa"/> <b>Create your menu </b></div>
           </div>
         </div>
         <div className="chose">
           <div className="working">
-          <div> < Bs3CircleFill /></div>
-            <p> <FaStore /> Go enjoy it at the restaurant</p>
+          <div className="circlefill"> <Bs3CircleFill size={25} color={"#9356DC"}/></div>
+            <div className="styleFab"> <FaStore className="styleFa-3"/><b> Go enjoy it at the restaurant</b></div>
           </div>
         </div>
       </section>
@@ -76,7 +76,8 @@ useEffect(() => {
         restaurantDetails?.length > 0 ? (
           restaurantDetails.map((restaurant, index) => (
             <div key={index}>
-                <RestaurantCard id={restaurant.id} restImage={restaurant.restImage} name={restaurant.name} location={restaurant.location} menus={restaurant.menus}/>
+              <RestaurantCard restInfo={restaurant} />
+                {/* <RestaurantCard id={restaurant.id} restImage={restaurant.restImage} name={restaurant.name} location={restaurant.location} menus={restaurant.menus}/> */}
             </div>
           ))
         ) : (

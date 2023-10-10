@@ -5,9 +5,10 @@ $secondary-color: #FF79DA;
 $tertiary-color: #99E2D0;
 $shadow-dark: 0 2rem 6rem rgba(0,0,0,.3);
 $shadow-light: 0 2rem 5rem rgba(0,0,0,.06);
+$hover-color: #e2d7ef;
 
 .btn {
-  background: #FF79DA;
+  background: $secondary-color;
   background-image: linear-gradient(to bottom, #FF79DA , #9356DC);
   border-radius: 28;
   font-family: Roboto;
