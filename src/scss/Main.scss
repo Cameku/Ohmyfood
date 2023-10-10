@@ -1,13 +1,15 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
 @import './variables.scss';
 @import './Home.scss';
+@import './Menu.scss';
+@import './FormMain.scss';
 
 /***** base styles *****/
 body {
   overflow-x: hidden;
   font-family: Roboto;
   font-size: 16px;
-  }
+}
 
 //Setting break points
 $breakpoint: (
@@ -19,10 +21,10 @@ $breakpoint: (
 
 //Changing The Default Settings..
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
 }
 
 li {
@@ -32,6 +34,6 @@ li {
 *,
 *::before,
 *::after {
-    box-sizing: inherit;
+  box-sizing: inherit;
 }
 

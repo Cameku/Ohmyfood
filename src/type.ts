@@ -5,10 +5,10 @@ export type RestaurantType = {
     restImage: string;
     name: string;
     location: string;
-    menus: Menu[];
+    menus: MenuType[];
 }
 
-export type Menu = {
+export type MenuType = {
 name: string;
 description: string;
 price: number;
